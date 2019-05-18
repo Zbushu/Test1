@@ -37,13 +37,17 @@ public class CollectionTestSuite {
         ArrayList<Integer> normalList = new ArrayList<Integer>();
         normalList.add(2);
         normalList.add(3);
+        normalList.add(4);
 
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         exterminator.exterminated(normalList);
 
         ArrayList<Integer> result = exterminator.getExterminate();
-        System.out.println(result);
-        //Then
-        Assert.assertEquals(2,result);
+        for(int even: result) {
+
+            System.out.println(even);
+
+            Assert.assertEquals(2, result.size());
+        }
     }
 }

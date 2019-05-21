@@ -1,5 +1,4 @@
 package com.kodilla.testing.collection;
-import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
 
 import java.util.ArrayList;
@@ -9,45 +8,45 @@ import static junit.framework.TestCase.assertTrue;
 
 public class CollectionTestSuite {
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test Case: begin");
     }
+
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
+
     @BeforeClass
     public static void beforeClass() {
         System.out.println("Test Suite: begin");
     }
+
     @AfterClass
     public static void afterClass() {
         System.out.println("Test Suite: end");
     }
+
     @Test
-    public void testOddNumbersExterminatorEmptyList(){
-        //Given
-        ArrayList<Integer> emptyList= new ArrayList<Integer>();
+    public void testOddNumbersExterminatorEmptyList() {
+
+        ArrayList<Integer> emptyList = new ArrayList<Integer>();
         assertTrue(emptyList.isEmpty());
 
-}
+    }
+
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
-        ArrayList<Integer> normalList = new ArrayList<Integer>();
-        normalList.add(2);
-        normalList.add(3);
-        normalList.add(4);
+        ArrayList<Integer> numberlist = new ArrayList<>();
+        numberlist.add(2);
+        numberlist.add(3);
+        numberlist.add(4);
 
-        OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        exterminator.exterminated(normalList);
 
-        ArrayList<Integer> result = exterminator.getExterminate();
-        for(int even: result) {
-
-            System.out.println(even);
-
-            Assert.assertEquals(2, result.size());
-        }
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        oddNumbersExterminator.exterminate(numberlist);
+        System.out.println(numberlist);
+        Assert.assertEquals(2, numberlist.size());
     }
 }

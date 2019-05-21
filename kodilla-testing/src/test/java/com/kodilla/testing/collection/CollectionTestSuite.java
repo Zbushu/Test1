@@ -42,11 +42,12 @@ public class CollectionTestSuite {
         numberlist.add(2);
         numberlist.add(3);
         numberlist.add(4);
+        numberlist.add(7);
 
 
-        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        oddNumbersExterminator.exterminate(numberlist);
-        System.out.println(numberlist);
-        Assert.assertEquals(2, numberlist.size());
+       OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        ArrayList even = oddNumbersExterminator.exterminate(numberlist);
+        System.out.println(even);
+        Assert.assertEquals(2, even.size());
     }
 }

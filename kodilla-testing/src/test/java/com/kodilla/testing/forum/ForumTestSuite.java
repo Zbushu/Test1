@@ -1,7 +1,5 @@
 package com.kodilla.testing.forum;
-import com.kodilla.testing.user.SimpleUser;
 import org.junit.*;
-import org.junit.runners.AllTests;
 
 public class ForumTestSuite {
     private static int testCounter = 0;
@@ -29,7 +27,7 @@ public class ForumTestSuite {
         //When
         forumUser.addPost("kowalsky", "Lubie placki");
         //Then
-        Assert.assertEquals(1, forumUser.getPostsQuanity());
+        Assert.assertEquals(1, forumUser.getPostsQuantity());
     }
 
     @Test
@@ -40,7 +38,7 @@ public class ForumTestSuite {
         //When
         forumUser.addComment(thePost, "kowalsky", "Z ketchupem też");
         //Then
-        Assert.assertEquals(1, forumUser.getCommentQuanity());
+        Assert.assertEquals(1, forumUser.getCommentQuantity());
     }
 
     @Test
@@ -106,7 +104,7 @@ public class ForumTestSuite {
 
         //Then
         Assert.assertTrue(result);
-        Assert.assertEquals(0, forumUser.getCommentQuanity());
+        Assert.assertEquals(0, forumUser.getCommentQuantity());
     }
 
     @Test
@@ -122,6 +120,6 @@ public class ForumTestSuite {
 
         //Then
         Assert.assertTrue(result);
-        Assert.assertEquals(0, forumUser.getCommentQuanity());
+        Assert.assertEquals(0, forumUser.getCommentQuantity());
     }
 }

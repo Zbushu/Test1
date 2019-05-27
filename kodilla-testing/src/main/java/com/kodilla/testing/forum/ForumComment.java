@@ -11,7 +11,7 @@ public class ForumComment {
         this.forumPost = forumPost;
     }
 
-    public ForumPost getForumPost() {
+    public ForumPost getPost() {
         return forumPost;
     }
 

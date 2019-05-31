@@ -84,4 +84,51 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
+    @Test
+    public void testListBooksInHandsOfUserZero() {
+        //Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("First name", "Last name", "000000");
+        List<Book> resultList = new ArrayList<Book>();
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(resultList);
+
+        //When
+        List<Book> theListOfBorrowedBooks = bookLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(0, theListOfBorrowedBooks.size());
+    }
+    @Test
+    public void testListBooksInHandsOfUserOne(){
+        //Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("First name", "Last name", "000000");
+        List<Book> resultList = generateListOfNBooks(1);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(resultList);
+
+        //When
+        List<Book> theListOfBorrowedBooks = bookLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(1, theListOfBorrowedBooks.size());
+
+    }
+    @Test
+    public void testListBooksInHandsOfUserFive(){
+        //Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        LibraryUser libraryUser = new LibraryUser("First name", "Last name", "000000");
+        List<Book> resultList = generateListOfNBooks(5);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(resultList);
+
+        //When
+        List<Book> theListOfBorrowedBooks = bookLibrary.listBooksInHandsOf(libraryUser);
+
+        //Then
+        assertEquals(5, theListOfBorrowedBooks.size());
+    }
+
 }

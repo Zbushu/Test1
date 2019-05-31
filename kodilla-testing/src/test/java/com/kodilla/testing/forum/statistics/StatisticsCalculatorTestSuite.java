@@ -69,9 +69,9 @@ public class StatisticsCalculatorTestSuite {
         Assert.assertEquals(100,statisticsCalculator.getUsers());
         Assert.assertEquals(1000,statisticsCalculator.getPosts());
         Assert.assertEquals(10,statisticsCalculator.getComments());
-        Assert.assertEquals(1000 / 100,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(10 / 100,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(10 / 1000,statisticsCalculator.getCommentsPerPost());
+        Assert.assertEquals(10,statisticsCalculator.getPostsPerUser());
+        Assert.assertEquals(0,statisticsCalculator.getCommentsPerUser());
+        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
 
     }
     @Test
@@ -95,7 +95,7 @@ public class StatisticsCalculatorTestSuite {
         Assert.assertEquals(100,statisticsCalculator.getUsers());
         Assert.assertEquals(1000,statisticsCalculator.getPosts());
         Assert.assertEquals(0,statisticsCalculator.getComments());
-        Assert.assertEquals(1000 / 100,statisticsCalculator.getPostsPerUser());
+        Assert.assertEquals(10,statisticsCalculator.getPostsPerUser());
         Assert.assertEquals(0 ,statisticsCalculator.getCommentsPerUser());
         Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
 
@@ -109,7 +109,7 @@ public class StatisticsCalculatorTestSuite {
             users.add("fakeUser");
         }
         int posts = 1000;
-        int comments = 10;
+        int comments = 570;
 
         when(statisticMock.usersNames()).thenReturn(users);
         when(statisticMock.postsCount()).thenReturn(posts);
@@ -120,10 +120,10 @@ public class StatisticsCalculatorTestSuite {
         //Then
         Assert.assertEquals(100,statisticsCalculator.getUsers());
         Assert.assertEquals(1000,statisticsCalculator.getPosts());
-        Assert.assertEquals(10,statisticsCalculator.getComments());
-        Assert.assertEquals(1000 / 100,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(10 / 100,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(10 / 1000,statisticsCalculator.getCommentsPerPost());
+        Assert.assertEquals(570,statisticsCalculator.getComments());
+        Assert.assertEquals(10,statisticsCalculator.getPostsPerUser());
+        Assert.assertEquals(5,statisticsCalculator.getCommentsPerUser());
+        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
 
     }
     @Test
@@ -147,9 +147,9 @@ public class StatisticsCalculatorTestSuite {
         Assert.assertEquals(100,statisticsCalculator.getUsers());
         Assert.assertEquals(10,statisticsCalculator.getPosts());
         Assert.assertEquals(1000,statisticsCalculator.getComments());
-        Assert.assertEquals(10 / 100,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(1000 / 100,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(1000 / 10,statisticsCalculator.getCommentsPerPost());
+        Assert.assertEquals(0,statisticsCalculator.getPostsPerUser());
+        Assert.assertEquals(10,statisticsCalculator.getCommentsPerUser());
+        Assert.assertEquals(100,statisticsCalculator.getCommentsPerPost());
 
     }
     @Test
@@ -172,7 +172,7 @@ public class StatisticsCalculatorTestSuite {
         Assert.assertEquals(10,statisticsCalculator.getComments());
         Assert.assertEquals(0,statisticsCalculator.getPostsPerUser());
         Assert.assertEquals(0,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(10 / 1000,statisticsCalculator.getCommentsPerPost());
+        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
 
     }
 }

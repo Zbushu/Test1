@@ -96,8 +96,8 @@ public class StatisticsCalculatorTestSuite {
         Assert.assertEquals(1000,statisticsCalculator.getPosts());
         Assert.assertEquals(0,statisticsCalculator.getComments());
         Assert.assertEquals(1000 / 100,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(0 / 100,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(0 / 1000,statisticsCalculator.getCommentsPerPost());
+        Assert.assertEquals(0 ,statisticsCalculator.getCommentsPerUser());
+        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
 
     }
     @Test
@@ -120,7 +120,7 @@ public class StatisticsCalculatorTestSuite {
         //Then
         Assert.assertEquals(100,statisticsCalculator.getUsers());
         Assert.assertEquals(1000,statisticsCalculator.getPosts());
-        Assert.assertEquals(0,statisticsCalculator.getComments());
+        Assert.assertEquals(10,statisticsCalculator.getComments());
         Assert.assertEquals(1000 / 100,statisticsCalculator.getPostsPerUser());
         Assert.assertEquals(10 / 100,statisticsCalculator.getCommentsPerUser());
         Assert.assertEquals(10 / 1000,statisticsCalculator.getCommentsPerPost());
@@ -146,7 +146,7 @@ public class StatisticsCalculatorTestSuite {
         //Then
         Assert.assertEquals(100,statisticsCalculator.getUsers());
         Assert.assertEquals(10,statisticsCalculator.getPosts());
-        Assert.assertEquals(0,statisticsCalculator.getComments());
+        Assert.assertEquals(1000,statisticsCalculator.getComments());
         Assert.assertEquals(10 / 100,statisticsCalculator.getPostsPerUser());
         Assert.assertEquals(1000 / 100,statisticsCalculator.getCommentsPerUser());
         Assert.assertEquals(1000 / 10,statisticsCalculator.getCommentsPerPost());
@@ -169,7 +169,7 @@ public class StatisticsCalculatorTestSuite {
         //Then
         Assert.assertEquals(0,statisticsCalculator.getUsers());
         Assert.assertEquals(1000,statisticsCalculator.getPosts());
-        Assert.assertEquals(0,statisticsCalculator.getComments());
+        Assert.assertEquals(10,statisticsCalculator.getComments());
         Assert.assertEquals(0,statisticsCalculator.getPostsPerUser());
         Assert.assertEquals(0,statisticsCalculator.getCommentsPerUser());
         Assert.assertEquals(10 / 1000,statisticsCalculator.getCommentsPerPost());

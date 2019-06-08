@@ -4,6 +4,7 @@ import org.junit.*;
 
 import java.util.*;
 
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -40,12 +41,12 @@ public class StatisticsCalculatorTestSuite {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         //Then
-        Assert.assertEquals(100,statisticsCalculator.getUsers());
-        Assert.assertEquals(0,statisticsCalculator.getPosts());
-        Assert.assertEquals(1,statisticsCalculator.getComments());
-        Assert.assertEquals(0,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(0,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
+        assertEquals(100,statisticsCalculator.getUsers());
+        assertEquals(0,statisticsCalculator.getPosts());
+        assertEquals(1,statisticsCalculator.getComments());
+        assertEquals(0,statisticsCalculator.getPostsPerUser(),0.0);
+        assertEquals(0.01,statisticsCalculator.getCommentsPerUser(),0.0);
+        assertEquals(0,statisticsCalculator.getCommentsPerPost(),0.0);
 
     }
     @Test
@@ -66,12 +67,12 @@ public class StatisticsCalculatorTestSuite {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         //Then
-        Assert.assertEquals(100,statisticsCalculator.getUsers());
-        Assert.assertEquals(1000,statisticsCalculator.getPosts());
-        Assert.assertEquals(10,statisticsCalculator.getComments());
-        Assert.assertEquals(10,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(0,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
+        assertEquals(100,statisticsCalculator.getUsers());
+        assertEquals(1000,statisticsCalculator.getPosts());
+        assertEquals(10,statisticsCalculator.getComments());
+        assertEquals(10.0,statisticsCalculator.getPostsPerUser(),0.0);
+        assertEquals(0.01,statisticsCalculator.getCommentsPerUser(),0.1);
+        assertEquals(0.01,statisticsCalculator.getCommentsPerPost(),0.0);
 
     }
     @Test
@@ -92,12 +93,12 @@ public class StatisticsCalculatorTestSuite {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         //Then
-        Assert.assertEquals(100,statisticsCalculator.getUsers());
-        Assert.assertEquals(1000,statisticsCalculator.getPosts());
-        Assert.assertEquals(0,statisticsCalculator.getComments());
-        Assert.assertEquals(10,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(0 ,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
+        assertEquals(100,statisticsCalculator.getUsers());
+        assertEquals(1000,statisticsCalculator.getPosts());
+        assertEquals(0,statisticsCalculator.getComments());
+        assertEquals(10,statisticsCalculator.getPostsPerUser(),0.0);
+        assertEquals(0,statisticsCalculator.getCommentsPerUser(),0.0);
+        assertEquals(0,statisticsCalculator.getCommentsPerPost(),0.0);
 
     }
     @Test
@@ -118,12 +119,12 @@ public class StatisticsCalculatorTestSuite {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         //Then
-        Assert.assertEquals(100,statisticsCalculator.getUsers());
-        Assert.assertEquals(1000,statisticsCalculator.getPosts());
-        Assert.assertEquals(570,statisticsCalculator.getComments());
-        Assert.assertEquals(10,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(5,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
+        assertEquals(100,statisticsCalculator.getUsers());
+        assertEquals(1000,statisticsCalculator.getPosts());
+        assertEquals(570,statisticsCalculator.getComments());
+        assertEquals(10.0,statisticsCalculator.getPostsPerUser(),0.1);
+        assertEquals(5.7,statisticsCalculator.getCommentsPerUser(),0.1);
+        assertEquals(0.57,statisticsCalculator.getCommentsPerPost(),0.1);
 
     }
     @Test
@@ -144,12 +145,12 @@ public class StatisticsCalculatorTestSuite {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         //Then
-        Assert.assertEquals(100,statisticsCalculator.getUsers());
-        Assert.assertEquals(10,statisticsCalculator.getPosts());
-        Assert.assertEquals(1000,statisticsCalculator.getComments());
-        Assert.assertEquals(0,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(10,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(100,statisticsCalculator.getCommentsPerPost());
+        assertEquals(100,statisticsCalculator.getUsers());
+        assertEquals(10,statisticsCalculator.getPosts());
+        assertEquals(1000,statisticsCalculator.getComments());
+        assertEquals(0.1,statisticsCalculator.getPostsPerUser(),0.0);
+        assertEquals(10,statisticsCalculator.getCommentsPerUser(),0.0);
+        assertEquals(100,statisticsCalculator.getCommentsPerPost(),0.0);
 
     }
     @Test
@@ -167,12 +168,12 @@ public class StatisticsCalculatorTestSuite {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticMock);
         //Then
-        Assert.assertEquals(0,statisticsCalculator.getUsers());
-        Assert.assertEquals(1000,statisticsCalculator.getPosts());
-        Assert.assertEquals(10,statisticsCalculator.getComments());
-        Assert.assertEquals(0,statisticsCalculator.getPostsPerUser());
-        Assert.assertEquals(0,statisticsCalculator.getCommentsPerUser());
-        Assert.assertEquals(0,statisticsCalculator.getCommentsPerPost());
+        assertEquals(0,statisticsCalculator.getUsers());
+        assertEquals(1000,statisticsCalculator.getPosts());
+        assertEquals(10,statisticsCalculator.getComments());
+        assertEquals(0,statisticsCalculator.getPostsPerUser(),0.0);
+        assertEquals(0,statisticsCalculator.getCommentsPerUser(),0.0);
+        assertEquals(0.01,statisticsCalculator.getCommentsPerPost(),0.0);
 
     }
 }

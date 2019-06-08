@@ -2,13 +2,14 @@ package com.kodilla.testing.forum.statistics;
 
 import java.util.List;
 
+
 public class StatisticsCalculator {
     int users;
     int posts;
     int comments;
-    int postsPerUser;
-    int commentsPerUser;
-    int commentsPerPost;
+    double postsPerUser;
+    double commentsPerUser;
+    double commentsPerPost;
 
     public void calculateAdvStatistics(Statistics statistics){
         List<String>usersList = statistics.usersNames();
@@ -16,19 +17,19 @@ public class StatisticsCalculator {
         posts = statistics.postsCount();
         comments = statistics.commentsCount();
         if (users != 0){
-            postsPerUser = posts / users;
+            postsPerUser = (double) posts / users;
         } else {
-            postsPerUser = 0;
+            postsPerUser = 0.0;
         }
         if (users !=0){
-            commentsPerUser = comments / users;
+            commentsPerUser = (double) comments / users;
         } else {
-            commentsPerUser = 0;
+            commentsPerUser = 0.0;
         }
         if (posts != 0){
-            commentsPerPost = comments / posts;
+            commentsPerPost =(double)comments / posts;
         } else {
-            commentsPerPost = 0;
+            commentsPerPost = 0.0;
         }
     }
 
@@ -44,15 +45,15 @@ public class StatisticsCalculator {
         return comments;
     }
 
-    public int getPostsPerUser() {
+    public double getPostsPerUser() {
         return postsPerUser;
     }
 
-    public int getCommentsPerUser() {
+    public double getCommentsPerUser() {
         return commentsPerUser;
     }
 
-    public int getCommentsPerPost() {
+    public double getCommentsPerPost() {
         return commentsPerPost;
     }
 }

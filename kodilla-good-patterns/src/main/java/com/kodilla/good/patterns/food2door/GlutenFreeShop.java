@@ -5,8 +5,7 @@ public class GlutenFreeShop implements Vendor {
     public boolean process(Order order) {
         System.out.println("Do we need gluten?");
         int orderQuantity = order.getProductList().stream()
-                .map(i -> i.getQuantity())
-                .mapToInt(n -> n.intValue())
+                .mapToInt(Product::getQuantity)
                 .sum();
         if(orderQuantity >=3) {
             System.out.println("We need some gluten free food!");
